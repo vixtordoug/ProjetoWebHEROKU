@@ -18,8 +18,14 @@ try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $password);
   // set the PDO error mode to exception
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  echo "Conectado com sucesso!";
+  $sql = "INSERT INTO aluno (aluno, disciplina, nota1, nota2)
+  VALUES ('Víctor', 'LPW', '10.0', '10.0')";
+  // use exec() because no results are returned
+  $conn->exec($sql);
+  echo "Cadastrado com sucesso!";
 } catch(PDOException $e) {
-  echo "Falha na conexão: " . $e->getMessage();
+  echo $sql . "<br>" . $e->getMessage();
 }
+
+$conn = null;
 ?>
