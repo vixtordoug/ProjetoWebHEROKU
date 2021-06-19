@@ -22,17 +22,17 @@ class TableRows extends RecursiveIteratorIterator {
 
 //Dados de conexão local
 
-$servername = "localhost";
+/* $servername = "localhost";
 $username   = "root";
 $password   = "";
-$dbname     = "projetoweb";
+$dbname     = "projetoweb"; */
 
 
 //Dados de conexão InfinityFree
-/* $servername = "sql204.epizy.com";
+$servername = "sql204.epizy.com";
 $username   = "epiz_28925354";
 $password   = "pdWPy1MqQxMY";
-$dbname     = "epiz_28925354_projetoWeb"; */
+$dbname     = "epiz_28925354_projetoWeb";
 
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
