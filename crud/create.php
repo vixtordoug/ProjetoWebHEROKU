@@ -1,4 +1,12 @@
 <?php
+
+$aluno      = $_POST['aluno'];
+$disciplina = $_POST['disciplina'];
+$notaI      = $_POST['notaI'];
+$notaII     = $_POST['notaII'];
+
+var_dump($aluno, $disciplina, $notaI, $notaII);
+
 //Página de Conexão com database
 //Dados de conexão local
 
@@ -20,7 +28,7 @@ try {
   // set the PDO error mode to exception
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $sql = "INSERT INTO aluno (aluno, disciplina, nota1, nota2)
-  VALUES ('Rafaela', 'ADS', '9.0', '10.0')";
+  VALUES ('$aluno', '$disciplina', '$notaI', '$notaII')";
   // use exec() because no results are returned
   $conn->exec($sql);
   echo "Cadastrado com sucesso!";
